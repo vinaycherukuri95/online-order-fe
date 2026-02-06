@@ -1,8 +1,9 @@
 import { useState } from "react";
 import Login from "./Login";
 import Register from "./Register";
-import Home from "./Home";
+import Home from "./home/Home.jsx";
 import FoodUpload from "./foodupload.jsx";
+
 
 function App() {
   const [page, setPage] = useState("login");
@@ -13,6 +14,7 @@ function App() {
   const onLoginSuccessadmin = () => {
     setPage("foodupload");
   };
+
   return (
     <>
       {page === "login" && (
@@ -27,6 +29,7 @@ function App() {
       {page === "home" && <Home />}
 
       {page === "foodupload" && <FoodUpload />}
+      
     </>
   );
 }

@@ -1,0 +1,124 @@
+/* Page background */
+.cart-page {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #ffecd2, #fcb69f);
+  padding: 40px 15px;
+  font-family: "Segoe UI", sans-serif;
+}
+
+/* Main card */
+.cart-container {
+  max-width: 850px;
+  margin: auto;
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+}
+
+/* Title */
+.cart-title {
+  text-align: center;
+  font-size: 30px;
+  margin-bottom: 25px;
+  color: #333;
+}
+
+/* Loading & empty */
+.loading,
+.empty-cart {
+  text-align: center;
+  font-size: 18px;
+  color: #777;
+  margin-top: 40px;
+}
+
+/* Cart item */
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #f9f9f9;
+  padding: 18px 20px;
+  border-radius: 12px;
+  margin-bottom: 15px;
+  transition: all 0.2s ease;
+}
+
+.cart-item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Item details */
+.item-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.food-name {
+  font-size: 18px;
+  color: #222;
+  margin-bottom: 5px;
+}
+
+.qty {
+  font-size: 14px;
+  color: #666;
+}
+
+/* Price */
+.item-price {
+  font-size: 20px;
+  font-weight: bold;
+  color: #2e7d32;
+}
+
+/* Summary */
+.cart-summary {
+  margin-top: 30px;
+  padding-top: 20px;
+  border-top: 2px dashed #ddd;
+  text-align: center;
+}
+
+.cart-summary h3 {
+  font-size: 18px;
+  color: #555;
+}
+
+.cart-summary h2 {
+  font-size: 28px;
+  margin: 10px 0 20px;
+  color: #000;
+}
+
+/* Checkout button */
+.checkout-btn {
+  padding: 14px 30px;
+  font-size: 16px;
+  border: none;
+  border-radius: 30px;
+  background: linear-gradient(135deg, #ff6a00, #ee0979);
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.checkout-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .cart-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .item-price {
+    align-self: flex-end;
+  }
+}
