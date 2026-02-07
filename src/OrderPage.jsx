@@ -14,6 +14,7 @@ function OrderPage() {
         `http://localhost:8080/api/orders/place/${userId}`,
         { method: "POST" }
       );
+     
 
       if (response.ok) {
         const data = await response.json();
@@ -38,6 +39,7 @@ function OrderPage() {
       console.error(error);
     }
   };
+   
 
   useEffect(() => {
     fetchOrders();

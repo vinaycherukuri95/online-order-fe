@@ -1,25 +1,30 @@
 import { useState } from "react";
 import Login from "./Login";
 import Register from "./Register";
-import Home from "./home/Home.jsx";
-import FoodUpload from "./foodupload.jsx";
-
+import Home from "./home/Home";
+import FoodUpload from "./foodupload";
+import AdminDashboard from "./admin/AdminDashboard";
+import AddRestaurant from "./admin/AddRestaurant";
 
 function App() {
   const [page, setPage] = useState("login");
+
   const onLoginSuccess = () => {
     setPage("home");
   };
 
   const onLoginSuccessadmin = () => {
-    setPage("foodupload");
+    setPage("adminDashboard");
   };
 
   return (
     <>
       {page === "login" && (
-        <Login onSwitch={() => setPage("register")}  onLoginSuccessadmin={onLoginSuccessadmin}
-        onLoginSuccess={onLoginSuccess}  />
+        <Login
+          onSwitch={() => setPage("register")}
+          onLoginSuccess={onLoginSuccess}
+          onLoginSuccessadmin={onLoginSuccessadmin}
+        />
       )}
 
       {page === "register" && (
@@ -28,8 +33,13 @@ function App() {
 
       {page === "home" && <Home />}
 
+      {page === "adminDashboard" && (
+        <AdminDashboard setPage={setPage} />
+      )}
+
+      {page === "addRestaurant" && <AddRestaurant />}
+
       {page === "foodupload" && <FoodUpload />}
-      
     </>
   );
 }

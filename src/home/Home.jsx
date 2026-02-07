@@ -78,6 +78,20 @@ const navigate = useNavigate();
         backgroundPosition: "center",
       }}
     >
+   <section className="restaurant-section">
+  <h2>🏪 Restaurants</h2>
+
+  <select
+    value={selectedRestaurant || ""}
+    onChange={(e) => setSelectedRestaurant(e.target.value)}
+  >
+    {restaurants.map(r => (
+      <option key={r.id} value={r.id}>
+        {r.name}
+      </option>
+    ))}
+  </select>
+</section>
       <section>
         <h2>🍔 Food Items</h2>
 

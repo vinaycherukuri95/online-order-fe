@@ -8,8 +8,7 @@ const Checkout = () => {
   const navigate = useNavigate();
 
   const [cart, setCart] = useState(null);
-  const [address, setAddress] = useState("");
-  const [phone, setPhone] = useState("");
+
 
   useEffect(() => {
     fetch(`http://localhost:8080/api/cart/${userId}`)
@@ -25,10 +24,6 @@ const Checkout = () => {
   );
 
   const placeOrder = async () => {
-    if (!address || !phone) {
-      alert("Please enter address and phone number");
-      return;
-    }
 
     try {
       await fetch("http://localhost:8080/api/orders/place", {
@@ -36,8 +31,6 @@ const Checkout = () => {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           userId,
-          address,
-          phone,
           paymentMethod: "COD"
         })
       });
@@ -53,22 +46,7 @@ const Checkout = () => {
       <div className="checkout-card">
         <h2>🧾 Checkout</h2>
 
-        {/* Delivery Info */}
-        <div className="section">
-          <h3>Delivery Details</h3>
-          <input
-            type="text"
-            placeholder="Delivery Address"
-            value={address}
-            onChange={e => setAddress(e.target.value)}
-          />
-          <input
-            type="text"
-            placeholder="Phone Number"
-            value={phone}
-            onChange={e => setPhone(e.target.value)}
-          />
-        </div>
+     
 
         {/* Order Summary */}
         <div className="section">

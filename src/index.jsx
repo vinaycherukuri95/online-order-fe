@@ -9,6 +9,7 @@ import Cart from "./Cart.jsx";
 import Checkout from "./Checkout.jsx";
 import OrderPage from "./OrderPage.jsx";
 
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
  <React.StrictMode>
@@ -21,6 +22,7 @@ root.render(
         <Route path="/cart/:userId" element={<Cart />} />
         <Route path="/checkout/:userId" element={<Checkout />} />
          <Route path="/orders/:userId" element={<OrderPage />} />
+         
       </Routes>
     </BrowserRouter>
   </React.StrictMode>
